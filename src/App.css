@@ -55,6 +55,22 @@ body {
   background-color: rgb(91, 142, 250);
 }
 
+.current-weather {
+  width: 22rem;
+  height: 17rem;
+  border-radius: 30px;
+  box-shadow: 3px 3px;
+  background-color: rgba(255, 255, 255, 0.493);
+}
+
+#current-temp {
+  font-size: 8rem;
+}
+
+#current-condition {
+  font-size: 3rem;
+}
+
 header,
 footer {
   flex: 1;
@@ -81,4 +97,8 @@ footer {
 .full-w-h {
   width: 100%;
   height: 100%;
+}
+
+.full-w-half-h {
+  height: 50%;
 }
