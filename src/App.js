@@ -1,34 +1,30 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import {
-  Header,
-  Footer,
-  Main,
-  fetchWeather,
-  geolocation,
-} from "./Components/index";
+import { Coords } from "./store/index";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Header, Main, geolocation } from "./Components/index";
 
 function App() {
-  const [lat, setlat] = useState(null);
-  const [lon, setlon] = useState(null);
+  const dispatch = useDispatch();
 
-  function success(pos) {
-    setlat(pos.coords.latitude);
-    setlon(pos.coords.longitude);
-    console.log(pos);
-    return;
-  }
+  const nightMode = useSelector((state) => state.NightTheme.night);
 
   useEffect(() => {
+    function success(pos) {
+      const location = {
+        lat: pos.coords.latitude,
+        lon: pos.coords.longitude,
+      };
+      dispatch(Coords(location));
+    }
+
     geolocation(success);
-    fetchWeather(lat, lon);
-  }, [lat, lon]);
+  }, [dispatch]);
 
   return (
-    <div className="App flex-col">
+    <div className={nightMode ? "Night App flex-col" : "Day App flex-col"}>
       <Header />
       <Main />
-      <Footer />
     </div>
   );
 }
