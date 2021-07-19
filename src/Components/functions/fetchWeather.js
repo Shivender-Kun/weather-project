@@ -5,14 +5,20 @@ const url =
 
 const fetchWeather = async ({ lat, lon }) => {
   try {
+    let result;
+    // if latitude & longitude defined get weather
     if (lat && lon) {
-      const result = await axios.get(
+      result = await axios.get(
         `${url}&lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API}`
       );
-      return result.data;
+    } else {
+      result = await axios.get(
+        `${url}&lat=33.44&lon=94.04&appid=${process.env.REACT_APP_WEATHER_API}`
+      );
     }
+    return result.data;
   } catch (error) {
-    return error.message;
+    return error;
   }
 };
 

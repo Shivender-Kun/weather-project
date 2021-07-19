@@ -22,7 +22,7 @@ function geolocation(success) {
         alert("Location request denied...");
       }
       result.onchange = function () {
-        console.log(result.state);
+        console.log("State changed : " + result.state);
       };
     });
   } else {

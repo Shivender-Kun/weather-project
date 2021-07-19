@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function CurrentWeather() {
+  // Accessing store data
   const coords = useSelector((state) => state.coordinates);
   const weatherData = useSelector((state) => state.weather.current);
 
@@ -11,8 +12,11 @@ function CurrentWeather() {
 
   useEffect(() => {
     async function fetchData() {
+      // if coordinates defined then get weather
       if (coords) {
         const weather = await fetchWeather(coords);
+
+        // Store weather data in redux store
         dispatch(Weather(weather));
       }
     }

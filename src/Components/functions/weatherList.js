@@ -1,3 +1,4 @@
+//  Get current month
 function getMonth() {
   const months = [
     "January",
@@ -17,6 +18,7 @@ function getMonth() {
   return months[currentMonth];
 }
 
+// Next 48 hours array
 function hoursArr() {
   const currentTime = new Date().getHours();
   let hours = [];
@@ -24,8 +26,10 @@ function hoursArr() {
 
   for (let i = 0; i < 48; i++) {
     const newTime = currentTime + i;
+
     if (newTime <= 24) hours.push(newTime);
     else {
+      // If time value exceeds 24 hours start from 0
       if (j >= 25) j = 0;
       hours.push(j++);
     }
@@ -33,11 +37,14 @@ function hoursArr() {
   return hours;
 }
 
+// Next 8 days array
 function dateArr() {
   let dates = [];
+
   const currentDate = new Date().getDate();
   const year = new Date().getFullYear();
   const month = new Date().getMonth() + 1;
+
   const totalDays = new Date(year, month, 0).getDate();
   let j = 1;
 
@@ -59,6 +66,7 @@ const list = (data) => {
 
       const dataList = data.map((i, index) => {
         return (
+          // list item with date/time, temperature and weather
           <li className="weather-item flex-col scale" key={index}>
             <div className="date-time">
               {data.length < 9
@@ -81,7 +89,7 @@ const list = (data) => {
     }
   } catch (error) {
     console.log(error);
-    return <div className="error">Unable to fetch data</div>;
+    return <div className="error">Error occured</div>;
   }
 };
 

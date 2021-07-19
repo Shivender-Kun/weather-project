@@ -11,13 +11,15 @@ function App() {
 
   useEffect(() => {
     function success(pos) {
+      // Accessing location coordinates
       const location = {
         lat: pos.coords.latitude,
         lon: pos.coords.longitude,
       };
+      // Storing coordinates in redux store
       dispatch(Coords(location));
     }
-
+    // Calling geolocation api for coordinates
     geolocation(success);
   }, [dispatch]);
 
