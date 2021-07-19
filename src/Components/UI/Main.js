@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Search, CurrentWeather, Forecast } from "./SubComponents/index";
 function Main() {
   return (
