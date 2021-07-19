@@ -4,13 +4,11 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 export const Place = createAction("Place");
 
 // Defining initial state
-const initialState = {
-  place: "",
-};
+const initialState = {};
 
 // Reducer
-export const search = createReducer(initialState, {
+export const location = createReducer(initialState, {
   Place: (state, action) => {
-    state.place = action.payload;
+    Object.assign(state, action.payload);
   },
 });

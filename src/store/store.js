@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { search, coordinates, weather, NightTheme } from "./index";
+import { location, coordinates, weather, NightTheme } from "./index";
 
 // Creating a new store
 const store = configureStore({
   reducer: {
-    search,
+    location,
     coordinates,
     weather,
     NightTheme,

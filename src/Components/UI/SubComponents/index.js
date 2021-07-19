@@ -2,7 +2,7 @@ import Search from "./Search";
 import Forecast from "./Forecast";
 import CurrentWeather from "./CurrentWeather";
 
-import { fetchCoords, fetchWeather, weatherList } from "../../index";
+import { fetchCoords, fetchWeather, weatherList, fetchCity } from "../../index";
 
 export {
   CurrentWeather,
@@ -11,4 +11,5 @@ export {
   fetchCoords,
   fetchWeather,
   weatherList,
+  fetchCity,
 };

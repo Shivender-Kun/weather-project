@@ -12,7 +12,7 @@ async function fetchCoords(city) {
       return { lat: loc.data[0].lat, lon: loc.data[0].lon };
     }
   } catch (error) {
-    return error;
+    return { error: "Not found" };
   }
 }
 

@@ -80,6 +80,7 @@ body {
 
 .scale {
   transition: 500ms ease-in-out;
+  cursor: default;
 }
 
 .scale:hover {

@@ -19,10 +19,10 @@ function geolocation(success) {
       } else if (result.state === "prompt") {
         navigator.geolocation.getCurrentPosition(success, errors, options);
       } else if (result.state === "denied") {
-        alert("Location request denied...");
+        console.warn("Location request denied...");
       }
       result.onchange = function () {
-        console.log("State changed : " + result.state);
+        console.warn("Location request " + result.state);
       };
     });
   } else {
