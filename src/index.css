@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Inconsolata", monospace;
+}
+
+.loading {
+  color: white;
+  margin-top: 2rem;
+}
+
+header {
+  flex: 1;
+
+  width: 100%;
+
+  color: aliceblue;
+  background-color: #3c7bc9;
+}
+
+header h1 {
+  flex: 1;
+}
+
+.scale {
+  transition: 500ms ease-in-out;
+  cursor: default;
+}
+
+.scale:hover {
+  transition: 500ms ease-in-out;
+  transform: scale(1.1);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.full-w-h {
+  width: 100%;
+  height: 100%;
+}
+
+.full-w-half-h {
+  height: 48%;
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 15px;
+  }
+
+  .current-weather {
+    width: 18rem;
+    height: 10rem;
+  }
+
+  #current-temp {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 11px;
+  }
+}

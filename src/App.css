@@ -1,14 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: black;
-}
-
 .App {
   height: 100vh;
   justify-content: space-between;
@@ -19,10 +8,6 @@ body {
   opacity: 0.7;
   background-color: rgba(78, 76, 76, 0.281);
   color: whitesmoke;
-}
-
-body {
-  font-family: "Inconsolata", monospace;
 }
 
 .Main {
@@ -69,6 +54,14 @@ body {
   background-color: rgb(75, 167, 221);
 }
 
+#current-temp {
+  font-size: 8rem;
+}
+
+#current-condition {
+  font-size: 3rem;
+}
+
 .current-weather {
   width: 20rem;
   height: 15rem;
@@ -78,22 +71,8 @@ body {
   background-color: #548cd1;
 }
 
-.scale {
-  transition: 500ms ease-in-out;
-  cursor: default;
-}
-
-.scale:hover {
-  transition: 500ms ease-in-out;
-  transform: scale(1.1);
-}
-
-#current-temp {
-  font-size: 8rem;
-}
-
-#current-condition {
-  font-size: 3rem;
+.weather-list::-webkit-scrollbar {
+  display: none;
 }
 
 .weather-list {
@@ -110,8 +89,11 @@ body {
   justify-content: unset !important;
 }
 
-.weather-list::-webkit-scrollbar {
-  display: none;
+.weather-item div {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .weather-item {
@@ -122,13 +104,6 @@ body {
   margin: 0px 2px;
   border-right: 1px solid rgb(200, 183, 240);
   text-decoration: none;
-}
-
-.weather-item div {
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .theme {
@@ -144,66 +119,4 @@ body {
   color: white;
   background: royalblue;
   border-radius: 10px;
-}
-
-header {
-  flex: 1;
-
-  width: 100%;
-
-  color: aliceblue;
-  background-color: #3c7bc9;
-}
-
-header h1 {
-  flex: 1;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.flex-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.full-w-h {
-  width: 100%;
-  height: 100%;
-}
-
-.full-w-half-h {
-  height: 48%;
-}
-
-@media (max-width: 700px) {
-  html {
-    font-size: 15px;
-  }
-
-  .current-weather {
-    width: 18rem;
-    height: 10rem;
-  }
-
-  #current-temp {
-    font-size: 7rem;
-  }
-}
-
-@media (max-width: 500px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 300px) {
-  html {
-    font-size: 11px;
-  }
 }

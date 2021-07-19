@@ -28,19 +28,25 @@ function CurrentWeather() {
   }, [dispatch, coords]);
 
   return (
-    <div className="container flex-col full-w-half-h">
-      <h2 className="location scale">
-        {location && `${location.city}, ${location.country}`}
-      </h2>
-      <div className="current-weather flex-col scale">
-        {weatherData && (
-          <h2 id="current-temp">{String(weatherData.temp).slice(0, 2)}°C</h2>
-        )}
-      </div>
-      <p id="current-condition" className="scale">
-        {weatherData && weatherData.weather[0].description.toUpperCase()}
-      </p>
-    </div>
+    <React.Fragment>
+      {weatherData ? (
+        <div className="container flex-col full-w-half-h">
+          <h2 className="location scale">
+            {location.city && `${location.city}, ${location.country}`}
+          </h2>
+
+          <div className="current-weather flex-col scale">
+            <h2 id="current-temp">{String(weatherData.temp).slice(0, 2)}°C</h2>
+          </div>
+
+          <p id="current-condition" className="scale">
+            {weatherData && weatherData.weather[0].description.toUpperCase()}
+          </p>
+        </div>
+      ) : (
+        <h2 className="loading">Loading weather data...</h2>
+      )}
+    </React.Fragment>
   );
 }
 
